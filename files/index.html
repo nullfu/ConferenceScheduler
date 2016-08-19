@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BSides 2016 MCR - Schedule</title>
+    <!-- CSS -->
+    <!-- load Bootstrap and custom style.css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- JS -->
+    <!-- load Angular, Firebase, Firebase Angular Library, and custom app.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div class="container" ng-app="scheduleApp" ng-controller="mainController">
+  <div class="page-header text-center">
+    <h1>BSides 2016 MCR - Schedule</h1>
+  <p class="text-center">
+    <div class="time-slot ">
+      <input type="checkbox" id="lock" ng-model="tracks.lock.locked">
+      <label for="lock">
+        <span ng-if="tracks.lock.locked">unlock</span>
+        <span ng-if="!tracks.lock.locked">lock</span>
+      </label>
+      <input class="btn btn-primary" id="reset-button" ng-click="reset()">
+      <label for="reset-button" ng-show="false"ng-hide="tracks.lock.locked">Reset
+      </label>
+    </div>
+
+  </p>
+  </div>
+
+<div class="container">
+  <table class="table times">
+    <thead>
+      <tr>
+        <!--<th ng-repeat="track in tracks">{{ track.name }}</th>-->
+        <th>Time</th>
+        <th>Track 1</th>
+        <th>Track 2</th>
+        <th>Track 3</th>
+        <th>Track 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="track in tracks">
+        <td ng-repeat="slot in track.slots">
+          <div class="time-slot ">
+            <span ng-if="slot.static_entry">
+              {{ slot.time }}<br>
+              {{ slot.speaker }}<br>
+              {{ slot.description }}
+            </span>
+            <span ng-if="!slot.static_entry"><input type="checkbox" id="{{ track }}-{{ $index }}" ng-model="slot.booked" ng-disabled="tracks.lock.locked">
+            <label for="{{ track }}-{{ $index }}">{{ slot.time }}<br>
+              <span>{{ slot.speaker }}</span><br>
+              <span>{{ slot.description }}</span>
+              <span>{{ slot.time2 }}</span><br>
+              <span>{{ slot.speaker2 }}</span><br>
+              <span>{{ slot.description2 }}</span>
+           </label></span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+</html>

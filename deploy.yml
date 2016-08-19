@@ -1,0 +1,21 @@
+---
+- hosts: main
+  tasks:
+    - name: Install packages
+      apt: name={{item}} update_cache=yes state=latest
+      with_items:
+      - apache2
+      - git
+      tags:
+        - install
+
+    - name: Deploy webfiles
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+      - { src: 'index.html', dest: '/var/www/html/index.html' }
+      - { src: 'style.css', dest: '/var/www/html/style.css' }
+      - { src:  'app.js', dest: '/var/www/html/app.js' }
+      tags:
+        - deploy
