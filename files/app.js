@@ -5,7 +5,7 @@ angular.module('scheduleApp', ['firebase'])
 .controller('mainController', function($scope, $firebase) {
   
   // connect to firebase 
-  var ref = new Firebase("https://bsides2016-sched.firebaseio.com/tracks");  
+  var ref = new Firebase("https://conferencescheduler-531e9.firebaseio.com/demo");  
   var fb = $firebase(ref);
 
   // sync as object 
@@ -18,7 +18,8 @@ angular.module('scheduleApp', ['firebase'])
   $scope.reset = function() {    
 
     fb.$set({
-      lock: {
+      app: {
+          app_name: 'Conference Name Here',
           locked: true
       },
       t0845: {

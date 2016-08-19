@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BSides 2016 MCR - Schedule</title>
+    <title>Conference Scheduler</title>
     <!-- CSS -->
     <!-- load Bootstrap and custom style.css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
@@ -17,16 +17,16 @@
 <body>
 <div class="container" ng-app="scheduleApp" ng-controller="mainController">
   <div class="page-header text-center">
-    <h1>BSides 2016 MCR - Schedule</h1>
+    <h1>{{ tracks.app.app_name }}</h1>
   <p class="text-center">
     <div class="time-slot ">
-      <input type="checkbox" id="lock" ng-model="tracks.lock.locked">
+      <input type="checkbox" id="lock" ng-model="tracks.app.locked">
       <label for="lock">
-        <span ng-if="tracks.lock.locked">unlock</span>
-        <span ng-if="!tracks.lock.locked">lock</span>
+        <span ng-if="tracks.app.locked">unlock</span>
+        <span ng-if="!tracks.app.locked">lock</span>
       </label>
       <input class="btn btn-primary" id="reset-button" ng-click="reset()">
-      <label for="reset-button" ng-show="false"ng-hide="tracks.lock.locked">Reset
+      <label for="reset-button" ng-show="false"ng-hide="tracks.app.locked">Reset
       </label>
     </div>
 
@@ -54,7 +54,7 @@
               {{ slot.speaker }}<br>
               {{ slot.description }}
             </span>
-            <span ng-if="!slot.static_entry"><input type="checkbox" id="{{ track }}-{{ $index }}" ng-model="slot.booked" ng-disabled="tracks.lock.locked">
+            <span ng-if="!slot.static_entry"><input type="checkbox" id="{{ track }}-{{ $index }}" ng-model="slot.booked" ng-disabled="tracks.app.locked">
             <label for="{{ track }}-{{ $index }}">{{ slot.time }}<br>
               <span>{{ slot.speaker }}</span><br>
               <span>{{ slot.description }}</span>
