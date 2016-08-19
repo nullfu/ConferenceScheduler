@@ -1,0 +1,6 @@
+{
+  "name": "Conference Scheduler",
+  "tagline": "Scheduling app for conferences",
+  "body": "# Conference Scheduler\r\n\r\nSmall angularjs schedule app using firebase as the back end.\r\n\r\n## Requirements:\r\n\r\n* Apache/Nginx/Other Web service\r\n* Ansible - If installing with ansible\r\n* Ubuntu 14.04 at this time (more distro varients to be added) with root ssh key based auth\r\n\r\n## Installation (Ansible):\r\n\r\nclone repo locally\r\n\r\n```\r\ncd {repo}\r\n\r\nansible-playbook deploy.yml\r\n```\r\n\r\n## Installation (Non-Ansible)\r\n\r\n* Install favourite web browser on remote host\r\n* Copy files from ./files/ to /var/www/html/ or simmilar (depending on your setup)\r\n\r\n## License\r\n\r\nSee LICENSE\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
