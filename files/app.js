@@ -20,7 +20,24 @@ angular.module('scheduleApp', ['firebase'])
     fb.$set({
       app: {
           app_name: 'Conference Name Here',
-          locked: true
+          locked: true,
+          track_names: {
+            track0: {
+              name: 'Time'
+            },
+            track1: {
+              name: 'Track 1'
+            },
+            track2: {
+              name: 'Track 2'
+            },
+            track3: {
+              name: 'Track 3'
+            },
+            track4: {
+              name: 'Track 4'
+            }
+          }
       },
       t0845: {
         slots: {
@@ -388,4 +405,3 @@ angular.module('scheduleApp', ['firebase'])
 
   };
 });
-
