@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Conference Scheduler</title>
+    <title>Conference Scheduler - Edit Mode</title>
     <!-- CSS -->
     <!-- load Bootstrap and custom style.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
@@ -17,13 +17,15 @@
 <body>
 <div class="container" ng-app="scheduleApp" ng-controller="mainController">
   <div class="page-header text-center">
-    <h1>{{ tracks.app.app_name }}</h1>
+    <h1>{{ tracks.app.app_name }} - Edit Mode</h1>
   <p class="text-center">
     <div class="time-slot ">
-      <a href="edit.html">
-        <input class="btn btn-primary" id="edit-button">
-        <label for="edit-button">Edit</label>
+      <a href="/">
+        <input class="btn btn-primary" id="home-button">
+        <label for="home-button">Home</label>
       </a>
+      <input class="btn btn-primary" id="reset-button" ng-click="reset()">
+      <label for="reset-button">Reset</label>
     </div>
 
   </p>
