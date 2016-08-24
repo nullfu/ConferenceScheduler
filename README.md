@@ -1,27 +1,31 @@
 # Conference Scheduler
 
-Small angularjs schedule app using firebase as the back end.
+Small AngularJS schedule app using Firebase as the back end.
 
-## Requirements:
+## Requirements
 
-* Apache/Nginx/Other Web service
-* Ansible - If installing with ansible
-* Ubuntu 14.04 at this time (more distro varients to be added) with root ssh key based auth
+* Your favourite web server software (apache, nginx, etc.)
+* Ansible (if installing using `ansible-playbook`)
+* Ubuntu 14.04 with root key based auth (wider support coming soon)
 
-## Installation (Ansible):
+## Installation
 
-clone repo locally
+*Assumes you are installing the files in `/var/www/html`*
+
+### Using Ansible
 
 ```
-cd {repo}
-
+git clone https://github.com/null/ConferenceScheduler.git
+cd ConferenceScheduler
 ansible-playbook deploy.yml
 ```
 
-## Installation (Non-Ansible)
+### Kicking it old school
 
-* Install favourite web browser on remote host
-* Copy files from ./files/ to /var/www/html/ or simmilar (depending on your setup)
+```
+git clone https://github.com/nullfu/ConferenceScheduler.git
+cp -r ConferenceScheduler/files/* /var/www/html/
+```
 
 ## License
 
