@@ -20,7 +20,7 @@ angular.module('scheduleApp', ['firebase'])
     fb.$set({
       app: {
           app_name: 'Conference Name Here',
-          locked: true,
+          locked: false,
           track_names: {
             track0: {
               name: 'Time'

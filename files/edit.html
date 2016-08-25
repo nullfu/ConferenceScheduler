@@ -47,7 +47,7 @@
               {{ slot.speaker }}<br>
               {{ slot.description }}
             </span>
-            <span ng-if="!slot.static_entry"><input type="checkbox" id="{{ track }}-{{ $index }}" ng-model="slot.booked" ng-disabled="tracks.app.locked">
+            <span ng-if="!slot.static_entry"><input type="checkbox" id="{{ track }}-{{ $index }}" ng-model="slot.booked" ng-disabled="false">
             <label for="{{ track }}-{{ $index }}">{{ slot.time }}<br>
               <span>{{ slot.speaker }}</span><br>
               <span>{{ slot.description }}</span>
